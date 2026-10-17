@@ -1,0 +1,49 @@
+# NEVER commit secrets
+.env
+
+# Raw downloads (CheXpert, IN-CXR) — large and/or licensed
+downloads/
+
+# Data can be large and/or licensed — don't commit it
+data/indian/*.jpg
+data/indian/*.jpeg
+data/indian/*.png
+data/chexpert/*.jpg
+data/chexpert/*.jpeg
+data/chexpert/*.png
+
+# Results may contain analysis you want to keep private until publication
+results/*.json
+results/*.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Blinded grading — never commit the packet, grades, or the hidden key
+grading_packet/
+results/_key_*.json
+results/grades.json
+
+# --- repo consolidation 2026-10-17: PATIENT DATA MUST NEVER BE COMMITTED ---
+# All grading packets (focused, pilot, ...) contain patient chest X-rays
+grading_packet*/
+# Scratch/validation dir (contains X-ray montages)
+temp/
+# Any medical/raster image anywhere in the repo
+*.png
+*.jpg
+*.jpeg
+*.dcm
+*.dicom
+*.DCM
+*.nii
+*.nii.gz
+# Per-case AI reads of patient films: private until publication (like results/*.json)
+results/*.csv
+# Env files (keep the template)
+.env*
+!.env.example

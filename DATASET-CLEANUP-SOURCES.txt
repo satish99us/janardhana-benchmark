@@ -1,0 +1,15 @@
+Dataset cleanup 2026-10-03
+Code, results, annotations, inventories and provenance are retained. Large raw files were removed at the user's request.
+HASTA SOURCES
+TouchMoment: https://adelaideuniversity.box.com/s/q633lrm5v5trrrj4ddvdwfcpmfupvitj
+Direct archive: https://adelaideuniversity.box.com/index.php?rm=box_download_shared_file&shared_name=q633lrm5v5trrrj4ddvdwfcpmfupvitj&file_id=f_2215141201855
+RekaDaily: https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw
+Reka shard list: work/raw/external/reka_shards/_shards_done.json (retained historical download record).
+Restore individual shards from https://huggingface.co/datasets/RekaAI/RekaDaily-10k-raw/resolve/main/ plus the shard path in that record.
+The existing fetch_reka_shards.py skips historical entries: a future restoration must use the retained list explicitly or reset the resume ledger after preserving a copy.
+EgoTactile: https://huggingface.co/datasets/HustleHard/EgoTactile
+RH20T: https://rh20t.github.io/
+YouTube sources: https://www.youtube.com/watch?v=VIDEO_ID ; IDs are the video filenames and are preserved in the cleanup manifest and existing inventories.
+Other sources and dataset documentation: retained PROVENANCE.md, README.md, downloader scripts and inventory files under work/.
+Janardhana: IN-CXR/NIRT and CheXpert source names are documented locally, but exact original download URLs were not found in the inspected files. Retained README files and manifests identify the datasets. Do not assume unauthenticated re-download access.
+Existing completion/status records describe historical downloads; they do not imply the raw files are still present.
